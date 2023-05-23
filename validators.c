@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * validate_push - validate "push" opcode
@@ -8,11 +8,11 @@
  */
 void validate_push(char *arg, unsigned int line_number)
 {
-    if (arg == NULL || (atoi(arg) == 0 && arg[0] != '0'))
+	if (arg == NULL || (atoi(arg) == 0 && arg[0] != '0'))
 	{
-        fprintf(stderr, "L%d: usage: push integer\n", line_number);
-        exit(EXIT_FAILURE);
-    }
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 }
 
 /**
@@ -23,11 +23,11 @@ void validate_push(char *arg, unsigned int line_number)
  */
 void validate_pall(char *arg, unsigned int line_number)
 {
-    if (arg != NULL)
+	if (arg != NULL)
 	{
-        fprintf(stderr, "L%d: usage: pall\n", line_number);
-        exit(EXIT_FAILURE);
-    }
+		fprintf(stderr, "L%d: usage: pall\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 }
 
 
@@ -40,22 +40,24 @@ void validate_pall(char *arg, unsigned int line_number)
  */
 void validate_args(char *opcode, char *arg, unsigned int line_number)
 {
-    int i;
+	int i;
 	operation_t operations[] = {
 		{"push", validate_push},
 		{"pall", validate_pall},
 		{NULL, NULL}
 	};
 
-    for (i = 0; operations[i].opcode != NULL; ++i) {
-        if (strcmp(opcode, operations[i].opcode) == 0) {
-            operations[i].validate_func(arg, line_number);
-            return;
-        }
-    }
+	for (i = 0; operations[i].opcode != NULL; ++i)
+	{
+		if (strcmp(opcode, operations[i].opcode) == 0)
+		{
+			operations[i].validate_func(arg, line_number);
+			return;
+		}
+	}
 
-    fprintf(stderr, "L%d: unknown operation %s\n", line_number, opcode);
-    exit(EXIT_FAILURE);
+	fprintf(stderr, "L%d: unknown operation %s\n", line_number, opcode);
+	exit(EXIT_FAILURE);
 }
 
 

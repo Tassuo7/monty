@@ -1,9 +1,9 @@
-#include "main.h"
+#include "monty.h"
 int VALUE_TO_PUSH = 0;
 /**
  * get_instr - Get the instruction for opcode
  * @opcode: The opcode
- * @insts: The instructions
+ * @instrs: The instructions
  * Return: A pointer to the instr
  */
 instruction_t *get_instr(char *opcode, instruction_t *instrs)

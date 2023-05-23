@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * check_num_of_args - Checks the num of command-line arguments.

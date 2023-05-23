@@ -1,6 +1,6 @@
-#include "main.h"
+#include "monty.h"
 
-extern int VALUE_TO_PUSH;
+
 /**
  * _push - Pushes el on top of the stack.
  * @stack: ptr to the top of the stack.
