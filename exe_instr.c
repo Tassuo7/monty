@@ -32,6 +32,7 @@ void exe_instr(char *opcode, char *arg, stack_t **stack, unsigned int line_num)
 	instruction_t instrs[] =  {
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 
@@ -42,6 +43,8 @@ void exe_instr(char *opcode, char *arg, stack_t **stack, unsigned int line_num)
 		if (strcmp(opcode, "push") == 0)
 			VALUE_TO_PUSH = atoi(arg);
 		instr->f(stack, line_num);
+		if (strcmp(opcode, "pint") == 0)
+			pint(stack, line_num);
 	}
 	else
 	{

@@ -56,6 +56,7 @@ void parse_line(char *curr_line, stack_t **stack, unsigned int line_num);
 void parse_file(FILE *file_ptr, stack_t **stack);
 instruction_t *get_instr(char *opcode, instruction_t *instrs);
 void exe_instr(char *opcode,char *arg, stack_t **stack, unsigned int line_num);
+void pint(stack_t **stack, unsigned int line_num);
 
 
 /*Validators*/
