@@ -49,7 +49,7 @@ typedef struct instruction_s
 typedef struct operation_s
 {
 	char *opcode;
-	void (*validate_func)(char *arg, unsigned int);
+	int (*validate_func)(char *arg, unsigned int);
 } operation_t;
 
 
@@ -57,21 +57,21 @@ typedef struct operation_s
 void check_num_of_args(int argc, char *argv[]);
 FILE *op_file(char *fname);
 void clean_mem(stack_t **stack, FILE *file_ptr);
-void parse_line(char *curr_line, stack_t **stack, unsigned int line_num);
-void parse_file(FILE *file_ptr, stack_t **stack);
+int parse_line(char *curr_line, stack_t **stack, unsigned int line_num);
+int parse_file(FILE *file_ptr, stack_t **stack);
 instruction_t *get_instr(char *opcode, instruction_t *instrs);
 void exe_instr(char *opcode,
 char *arg, stack_t **stack, unsigned int line_num);
 
 
 /*Validators*/
-void validate_args(char *opcode, char *arg, unsigned int line_number);
-void validate_push(char *arg, unsigned int line_number);
-void validate_pall(char *arg, unsigned int line_number);
-void validate_pint(char *arg, unsigned int line_number);
-void validate_pop(char *arg, unsigned int line_number);
-void validate_swap(char *arg, unsigned int line_number);
-void validate_add(char *arg, unsigned int line_number);
+int validate_args(char *opcode, char *arg, unsigned int line_number);
+int validate_push(char *arg, unsigned int line_number);
+int validate_pall(char *arg, unsigned int line_number);
+int validate_pint(char *arg, unsigned int line_number);
+int validate_pop(char *arg, unsigned int line_number);
+int validate_swap(char *arg, unsigned int line_number);
+int validate_add(char *arg, unsigned int line_number);
 
 /*Stack functions*/
 void _push(stack_t **stack, unsigned int line_num);
