@@ -89,7 +89,7 @@ int validate_args(char *opcode, char *arg, unsigned int line_number)
 	{
 		if (strcmp(opcode, operations[i].opcode) == 0)
 		{
-			if(operations[i].validate_func(arg, line_number) == -1)
+			if (operations[i].validate_func(arg, line_number) == -1)
 				return (-1);
 			return (0);
 		}
