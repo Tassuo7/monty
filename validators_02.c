@@ -39,3 +39,30 @@ int validate_nop(char *arg, unsigned int line_number)
 	(void)line_number;
 	return (0);
 }
+
+/**
+ * validate_pchar - Validate pchar
+ * @arg: The argument to validate.
+ * @line_number: The line number where the "pint" operation occurs.
+ * Return: void
+ */
+int validate_pchar(char *arg, unsigned int line_number)
+{
+	(void)arg;
+	(void)line_number;
+	return (0);
+}
+
+
+/**
+ * validate_pstr - Validate pstr
+ * @arg: The argument to validate.
+ * @line_number: The line number where the "pint" operation occurs.
+ * Return: void
+ */
+int validate_pstr(char *arg, unsigned int line_number)
+{
+	(void)arg;
+	(void)line_number;
+	return (0);
+}

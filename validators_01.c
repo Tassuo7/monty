@@ -74,6 +74,10 @@ int validate_args(char *opcode, char *arg, unsigned int line_number)
 		{"swap", validate_swap},
 		{"add", validate_add},
 		{"nop", validate_nop},
+		{"pchar", validate_pchar},
+		{"pstr", validate_pstr},
+		{"rotl", validate_rotl},
+		{"rotr", validate_rotr},
 		{NULL, NULL}
 	};
 
