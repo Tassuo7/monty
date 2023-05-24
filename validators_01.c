@@ -6,13 +6,14 @@
  * @line_number: The line number where the "push" operation occurs.
  * Return: void
  */
-void validate_push(char *arg, unsigned int line_number)
+int validate_push(char *arg, unsigned int line_number)
 {
 	if (arg == NULL || (atoi(arg) == 0 && arg[0] != '0'))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
+		return (-1);
 	}
+	return (0);
 }
 
 /**
@@ -21,13 +22,14 @@ void validate_push(char *arg, unsigned int line_number)
  * @line_number: The line number where the "pall" operation occurs.
  * Return: void
  */
-void validate_pall(char *arg, unsigned int line_number)
+int validate_pall(char *arg, unsigned int line_number)
 {
 	if (arg != NULL)
 	{
 		fprintf(stderr, "L%d: usage: pall\n", line_number);
-		exit(EXIT_FAILURE);
+		return (-1);
 	}
+	return (0);
 }
 
 /**
@@ -36,13 +38,14 @@ void validate_pall(char *arg, unsigned int line_number)
  * @line_number: The line number where the "pint" operation occurs.
  * Return: void
  */
-void validate_pint(char *arg, unsigned int line_number)
+int validate_pint(char *arg, unsigned int line_number)
 {
 	if (arg != NULL)
 	{
 		fprintf(stderr, "L%d: usage: pint\n", line_number);
-		exit(EXIT_FAILURE);
+		return (-1);
 	}
+	return (0);
 }
 
 /**
@@ -51,13 +54,14 @@ void validate_pint(char *arg, unsigned int line_number)
  * @line_number: The line number where the "swap" operation occurs.
  * Return: void
  */
-void validate_swap(char *arg, unsigned int line_number)
+int validate_swap(char *arg, unsigned int line_number)
 {
 	if (arg != NULL)
 	{
 		fprintf(stderr, "L%d: usage: swap\n", line_number);
-		exit(EXIT_FAILURE);
+		return (-1);
 	}
+	return (0);
 }
 
 
@@ -68,7 +72,7 @@ void validate_swap(char *arg, unsigned int line_number)
  * @line_number: The line number where the operation occurs.
  * Return: void
  */
-void validate_args(char *opcode, char *arg, unsigned int line_number)
+int validate_args(char *opcode, char *arg, unsigned int line_number)
 {
 	int i;
 	operation_t operations[] = {
@@ -85,11 +89,12 @@ void validate_args(char *opcode, char *arg, unsigned int line_number)
 	{
 		if (strcmp(opcode, operations[i].opcode) == 0)
 		{
-			operations[i].validate_func(arg, line_number);
-			return;
+			if(operations[i].validate_func(arg, line_number) == -1)
+				return (-1);
+			return (0);
 		}
 	}
 
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-	exit(EXIT_FAILURE);
+	return (-1);
 }

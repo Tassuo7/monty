@@ -63,11 +63,17 @@ int main(int argc, char *argv[])
 {
 	FILE *file_ptr;
 	stack_t *stack = NULL;
+	int status;
 
 	check_num_of_args(argc, argv);
 	file_ptr = op_file(argv[1]);
-	parse_file(file_ptr, &stack);
+	status = parse_file(file_ptr, &stack);
+	if (status == -1)
+	{
+		clean_mem(&stack, file_ptr);
+		return (EXIT_FAILURE);
+	}
 	clean_mem(&stack, file_ptr);
 
-	return (0);
+	return (EXIT_SUCCESS);
 }
