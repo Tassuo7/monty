@@ -20,17 +20,3 @@ void _swap(stack_t **stack, unsigned int line_number)
 	(*stack)->next->n = swaper;
 }
 
-/**
- * validate_swap - Validate swap
- * @arg: The argument to validate.
- * @line_number: The line number where the "swap" operation occurs.
- * Return: void
- */
-void validate_swap(char *arg, unsigned int line_number)
-{
-	if (arg != NULL)
-	{
-		fprintf(stderr, "L%d: usage: swap\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-}

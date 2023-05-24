@@ -46,6 +46,22 @@ void validate_pint(char *arg, unsigned int line_number)
 }
 
 /**
+ * validate_swap - Validate swap
+ * @arg: The argument to validate.
+ * @line_number: The line number where the "swap" operation occurs.
+ * Return: void
+ */
+void validate_swap(char *arg, unsigned int line_number)
+{
+	if (arg != NULL)
+	{
+		fprintf(stderr, "L%d: usage: swap\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+}
+
+
+/**
  * validate_args - Validate the opcode.
  * @opcode: The opcode to validate.
  * @arg: The argument to validate.
@@ -61,6 +77,7 @@ void validate_args(char *opcode, char *arg, unsigned int line_number)
 		{"pint", validate_pint},
 		{"pop", validate_pop},
 		{"swap", validate_swap},
+		{"add", validate_add},
 		{NULL, NULL}
 	};
 
