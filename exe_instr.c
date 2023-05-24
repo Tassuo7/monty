@@ -35,6 +35,8 @@ void exe_instr(char *opcode, char *arg, stack_t **stack, unsigned int line_num)
 		{"pint", _pint},
 		{"pop", _pop},
 		{"swap", _swap},
+		{"add", _add},
+		{"nop", _nop},
 		{NULL, NULL}
 	};
 
