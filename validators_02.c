@@ -8,11 +8,8 @@
  */
 int validate_pop(char *arg, unsigned int line_number)
 {
-	if (arg != NULL)
-	{
-		fprintf(stderr, "L%d: usage: pop\n", line_number);
-		return (-1);
-	}
+	(void)arg;
+	(void)line_number;
 	return (0);
 }
 

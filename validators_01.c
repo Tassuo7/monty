@@ -24,11 +24,8 @@ int validate_push(char *arg, unsigned int line_number)
  */
 int validate_pall(char *arg, unsigned int line_number)
 {
-	if (arg != NULL)
-	{
-		fprintf(stderr, "L%d: usage: pall\n", line_number);
-		return (-1);
-	}
+	(void)arg;
+	(void)line_number;
 	return (0);
 }
 
@@ -40,11 +37,8 @@ int validate_pall(char *arg, unsigned int line_number)
  */
 int validate_pint(char *arg, unsigned int line_number)
 {
-	if (arg != NULL)
-	{
-		fprintf(stderr, "L%d: usage: pint\n", line_number);
-		return (-1);
-	}
+	(void)arg;
+	(void)line_number;
 	return (0);
 }
 
@@ -56,11 +50,8 @@ int validate_pint(char *arg, unsigned int line_number)
  */
 int validate_swap(char *arg, unsigned int line_number)
 {
-	if (arg != NULL)
-	{
-		fprintf(stderr, "L%d: usage: swap\n", line_number);
-		return (-1);
-	}
+	(void)arg;
+	(void)line_number;
 	return (0);
 }
 
