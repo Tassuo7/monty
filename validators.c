@@ -30,6 +30,20 @@ void validate_pall(char *arg, unsigned int line_number)
 	}
 }
 
+/**
+ * validate_pint- Validate pint
+ * @arg: The argument to validate.
+ * @line_number: The line number where the "pint" operation occurs.
+ * Return: void
+ */
+void validate_pint(char *arg, unsigned int line_number)
+{
+	if (arg != NULL)
+	{
+		fprintf(stderr, "L%d: usage: pint\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+}
 
 /**
  * validate_args - Validate the opcode.
@@ -44,7 +58,8 @@ void validate_args(char *opcode, char *arg, unsigned int line_number)
 	operation_t operations[] = {
 		{"push", validate_push},
 		{"pall", validate_pall},
-		{"pint", NULL},
+		{"pint", validate_pint},
+		{"pop", NULL},
 		{NULL, NULL}
 	};
 

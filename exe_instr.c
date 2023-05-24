@@ -32,7 +32,8 @@ void exe_instr(char *opcode, char *arg, stack_t **stack, unsigned int line_num)
 	instruction_t instrs[] =  {
 		{"push", _push},
 		{"pall", _pall},
-		{"pint", pint},
+		{"pint", _pint},
+		{"pop", _pop},
 		{NULL, NULL}
 	};
 
