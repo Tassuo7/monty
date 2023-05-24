@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * validate_pint- Validate add
+ * validate_add - Validate add
  * @arg: The argument to validate.
  * @line_number: The line number where the "pint" operation occurs.
  * Return: void
@@ -9,12 +9,12 @@
 void validate_add(char *arg, unsigned int line_number)
 {
 	(void)arg;
-    (void)line_number;
+	(void)line_number;
 }
 
 
 /**
- * validate_nop  Validate nop
+ * validate_nop - Validate nop
  * @arg: The argument to validate.
  * @line_number: The line number where the "pint" operation occurs.
  * Return: void
@@ -22,5 +22,5 @@ void validate_add(char *arg, unsigned int line_number)
 void validate_nop(char *arg, unsigned int line_number)
 {
 	(void)arg;
-    (void)line_number;
+	(void)line_number;
 }

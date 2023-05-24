@@ -7,7 +7,7 @@
 #include <string.h>
 #include <sys/types.h>
 
-
+extern int VALUE_TO_PUSH;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -20,12 +20,11 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
-extern int VALUE_TO_PUSH;
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -36,15 +35,21 @@ extern int VALUE_TO_PUSH;
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 
+/**
+ * struct operation_s - validator its function
+ * @opcode: the opcode
+ * @validate_func: function to handle the opcode
+ * Description: validator and its function
+ */
 typedef struct operation_s
 {
-        char *opcode;
-        void (*validate_func)(char *arg, unsigned int);
+	char *opcode;
+	void (*validate_func)(char *arg, unsigned int);
 } operation_t;
 
 
@@ -55,7 +60,8 @@ void clean_mem(stack_t **stack, FILE *file_ptr);
 void parse_line(char *curr_line, stack_t **stack, unsigned int line_num);
 void parse_file(FILE *file_ptr, stack_t **stack);
 instruction_t *get_instr(char *opcode, instruction_t *instrs);
-void exe_instr(char *opcode,char *arg, stack_t **stack, unsigned int line_num);
+void exe_instr(char *opcode,
+char *arg, stack_t **stack, unsigned int line_num);
 
 
 /*Validators*/
@@ -74,6 +80,6 @@ void _pint(stack_t **stack, unsigned int line_num);
 void _pop(stack_t **stack, unsigned int line_num);
 void _swap(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_num);
-void _nop(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line_num);
 
 #endif
