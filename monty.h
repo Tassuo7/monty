@@ -72,7 +72,7 @@ int validate_pint(char *arg, unsigned int line_number);
 int validate_pop(char *arg, unsigned int line_number);
 int validate_swap(char *arg, unsigned int line_number);
 int validate_add(char *arg, unsigned int line_number);
-
+int validate_nop(char *arg, unsigned int line_number);
 /*Stack functions*/
 void _push(stack_t **stack, unsigned int line_num);
 void _pall(stack_t **stack, unsigned int line_num);
