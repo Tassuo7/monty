@@ -8,19 +8,12 @@
 
 void pint(stack_t **stack, unsigned int line_num)
 {
-	stack_t *pstack = *stack;
 
-	if (!stack)
+	if (!*stack)
 	{
 		printf("L%d: can't pint, stack empty\n", line_num);
 		exit(EXIT_FAILURE);
 	}
-	while ((*stack)->prev != NULL)
-	{
-		(*stack) = (*stack)->prev;
-	}
-	(*stack)->prev = pstack;
-	pstack->prev = NULL;
-	pstack->next = *stack;
-	exe_instr(NULL, "pall", pstack, line_num);
+	else
+		printf("%d\n", (*stack)->n);
 }

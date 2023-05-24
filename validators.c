@@ -18,7 +18,7 @@ void validate_push(char *arg, unsigned int line_number)
 /**
  * validate_pall- Validate pall
  * @arg: The argument to validate.
- * @line_number: The line number where the "push" operation occurs.
+ * @line_number: The line number where the "pall" operation occurs.
  * Return: void
  */
 void validate_pall(char *arg, unsigned int line_number)
@@ -44,6 +44,7 @@ void validate_args(char *opcode, char *arg, unsigned int line_number)
 	operation_t operations[] = {
 		{"push", validate_push},
 		{"pall", validate_pall},
+		{"pint", NULL},
 		{NULL, NULL}
 	};
 
@@ -56,9 +57,6 @@ void validate_args(char *opcode, char *arg, unsigned int line_number)
 		}
 	}
 
-	fprintf(stderr, "L%d: unknown operation %s\n", line_number, opcode);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 	exit(EXIT_FAILURE);
 }
-
-
-

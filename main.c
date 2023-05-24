@@ -54,7 +54,7 @@ void clean_mem(stack_t **stack, FILE *file_ptr)
 
 /**
  * main - Entry point
-  * @argc: The number of command-line arguments.
+ * @argc: The number of command-line arguments.
  * @argv: An array of command-line argument strings.
  * Return: 0
  */
