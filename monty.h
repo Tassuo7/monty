@@ -63,11 +63,14 @@ void validate_args(char *opcode, char *arg, unsigned int line_number);
 void validate_push(char *arg, unsigned int line_number);
 void validate_pall(char *arg, unsigned int line_number);
 void validate_pint(char *arg, unsigned int line_number);
+void validate_pop(char *arg, unsigned int line_number);
+void validate_swap(char *arg, unsigned int line_number);
 
 /*Stack functions*/
 void _push(stack_t **stack, unsigned int line_num);
 void _pall(stack_t **stack, unsigned int line_num);
 void _pint(stack_t **stack, unsigned int line_num);
 void _pop(stack_t **stack, unsigned int line_num);
+void _swap(stack_t **stack, unsigned int line_number);
 
 #endif

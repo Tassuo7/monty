@@ -59,7 +59,8 @@ void validate_args(char *opcode, char *arg, unsigned int line_number)
 		{"push", validate_push},
 		{"pall", validate_pall},
 		{"pint", validate_pint},
-		{"pop", NULL},
+		{"pop", validate_pop},
+		{"swap", validate_swap},
 		{NULL, NULL}
 	};
 
