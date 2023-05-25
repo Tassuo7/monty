@@ -77,6 +77,10 @@ int validate_pchar(char *arg, unsigned int line_number);
 int validate_pstr(char *arg, unsigned int line_number);
 int validate_rotl(char *arg, unsigned int line_number);
 int validate_rotr(char *arg, unsigned int line_number);
+int validate_sub(char *arg, unsigned int line_number);
+int validate_div(char *arg, unsigned int line_number);
+int validate_mod(char *arg, unsigned int line_number);
+int validate_mul(char *arg, unsigned int line_number);
 
 /*Stack functions*/
 void _push(stack_t **stack, unsigned int line_num);
@@ -90,5 +94,9 @@ void _pchar(stack_t **stack, unsigned int line_num);
 void _pstr(stack_t **stack, unsigned int line_number);
 void _rotl(stack_t **stack, unsigned int line_number);
 void _rotr(stack_t **stack, unsigned int line_number);
+void _sub(stack_t **stack, unsigned int line_num);
+void _div(stack_t **stack, unsigned int line_num);
+void _mod(stack_t **stack, unsigned int line_num);
+void _mul(stack_t **stack, unsigned int line_num);
 
 #endif

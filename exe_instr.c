@@ -41,6 +41,10 @@ void exe_instr(char *opcode, char *arg, stack_t **stack, unsigned int line_num)
 		{"pstr", _pstr},
 		{"rotl", _rotl},
 		{"rotr", _rotr},
+		{"sub", _sub},
+		{"div", _div},
+		{"mul", _mul},
+		{"mod", _mod},
 		{NULL, NULL}
 	};
 
