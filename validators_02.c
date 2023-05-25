@@ -16,7 +16,7 @@ int validate_pop(char *arg, unsigned int line_number)
 /**
  * validate_add - Validate add
  * @arg: The argument to validate.
- * @line_number: The line number where the "pint" operation occurs.
+ * @line_number: The line number where the "add" operation occurs.
  * Return: void
  */
 int validate_add(char *arg, unsigned int line_number)
@@ -30,7 +30,7 @@ int validate_add(char *arg, unsigned int line_number)
 /**
  * validate_nop - Validate nop
  * @arg: The argument to validate.
- * @line_number: The line number where the "pint" operation occurs.
+ * @line_number: The line number where the "nop" operation occurs.
  * Return: void
  */
 int validate_nop(char *arg, unsigned int line_number)
@@ -43,7 +43,7 @@ int validate_nop(char *arg, unsigned int line_number)
 /**
  * validate_pchar - Validate pchar
  * @arg: The argument to validate.
- * @line_number: The line number where the "pint" operation occurs.
+ * @line_number: The line number where the "pchar" operation occurs.
  * Return: void
  */
 int validate_pchar(char *arg, unsigned int line_number)
@@ -57,7 +57,7 @@ int validate_pchar(char *arg, unsigned int line_number)
 /**
  * validate_pstr - Validate pstr
  * @arg: The argument to validate.
- * @line_number: The line number where the "pint" operation occurs.
+ * @line_number: The line number where the "pstr" operation occurs.
  * Return: void
  */
 int validate_pstr(char *arg, unsigned int line_number)
