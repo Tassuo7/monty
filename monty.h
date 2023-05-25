@@ -7,7 +7,11 @@
 #include <string.h>
 #include <sys/types.h>
 
+#define STACK  1
+#define QUEUE  0
+
 extern int VALUE_TO_PUSH;
+extern int MODE;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -81,6 +85,8 @@ int validate_sub(char *arg, unsigned int line_number);
 int validate_div(char *arg, unsigned int line_number);
 int validate_mod(char *arg, unsigned int line_number);
 int validate_mul(char *arg, unsigned int line_number);
+int validate_stack(char *arg, unsigned int line_number);
+int validate_queue(char *arg, unsigned int line_number);
 
 /*Stack functions*/
 void _push(stack_t **stack, unsigned int line_num);
@@ -98,5 +104,13 @@ void _sub(stack_t **stack, unsigned int line_num);
 void _div(stack_t **stack, unsigned int line_num);
 void _mod(stack_t **stack, unsigned int line_num);
 void _mul(stack_t **stack, unsigned int line_num);
+
+/*Set modes*/
+void stack_mode(stack_t **stack, unsigned int line_number);
+void queue_mode(stack_t **stack, unsigned int line_number);
+
+/*Stack & Queue*/
+void push_s(stack_t **stack, stack_t *new_node);
+void push_q(stack_t **stack, stack_t *new_node);
 
 #endif

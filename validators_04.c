@@ -54,3 +54,4 @@ int validate_mod(char *arg, unsigned int line_number)
 	(void)line_number;
 	return (0);
 }
+

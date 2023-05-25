@@ -82,6 +82,8 @@ int validate_args(char *opcode, char *arg, unsigned int line_number)
 		{"div", validate_div},
 		{"mul", validate_mul},
 		{"mod", validate_mod},
+		{"queue", validate_queue},
+		{"stack", validate_stack},
 		{NULL, NULL}
 	};
 

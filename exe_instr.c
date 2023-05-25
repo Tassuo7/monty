@@ -1,5 +1,7 @@
 #include "monty.h"
 int VALUE_TO_PUSH = 0;
+int MODE = STACK;
+
 /**
  * get_instr - Get the instruction for opcode
  * @opcode: The opcode
@@ -45,6 +47,8 @@ void exe_instr(char *opcode, char *arg, stack_t **stack, unsigned int line_num)
 		{"div", _div},
 		{"mul", _mul},
 		{"mod", _mod},
+		{"stack", stack_mode},
+		{"queue", queue_mode},
 		{NULL, NULL}
 	};
 
