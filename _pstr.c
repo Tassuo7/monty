@@ -1,6 +1,5 @@
 #include "monty.h"
 
-
 /**
  * _pstr - prints string
  * @stack: ptr to the top of the stack.

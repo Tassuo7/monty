@@ -11,7 +11,7 @@ void _rotl(stack_t **stack, unsigned int line_number)
 	stack_t *curr_node, *tail;
 	(void)line_number;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 		return;
 	curr_node = *stack;
 	*stack = (*stack)->next;
