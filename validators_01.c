@@ -19,7 +19,7 @@ int validate_push(char *arg, unsigned int line_number)
 		return (-1);
 	}
 
-	for (;arg[idx] != '\0'; idx++)
+	for (; arg[idx] != '\0'; idx++)
 	{
 		if (!isdigit(arg[idx]))
 		{
