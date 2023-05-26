@@ -8,11 +8,26 @@
  */
 int validate_push(char *arg, unsigned int line_number)
 {
-	if (arg == NULL || (atoi(arg) == 0 && arg[0] != '0'))
+	int idx = 0;
+
+	if (arg == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		return (-1);
 	}
+
+	if (arg[0] == '-')
+		idx++;
+
+	for (; arg[idx]; idx++)
+	{
+		if (!isdigit((unsigned char)arg[idx]))
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			return (-1);
+		}
+	}
+
 	return (0);
 }
 
