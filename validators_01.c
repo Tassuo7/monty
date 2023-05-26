@@ -8,10 +8,24 @@
  */
 int validate_push(char *arg, unsigned int line_number)
 {
-	if (arg == NULL || (atoi(arg) == 0 && arg[0] != '0'))
+	int idx = 0;
+
+	if (arg[idx] == '-')
+		idx++;
+
+	if (arg[idx] == '\0')
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		return (-1);
+	}
+
+	for (;arg[idx] != '\0'; idx++)
+	{
+		if (!isdigit(arg[idx]))
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			return (-1);
+		}
 	}
 	return (0);
 }
