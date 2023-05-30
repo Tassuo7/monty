@@ -16,7 +16,8 @@ int parse_line(char *curr_line, stack_t **stack, unsigned int line_num)
 		return (0);
 
 	arg = strtok(NULL, " \t\n");
-	status = validate_args(opcode, arg, line_num);
+	if (strcmp(opcode,"push") == 0)
+		status = validate_push(arg, line_num);
 	if (status == -1)
 		return (-1);
 	exe_instr(opcode, arg, stack, line_num);

@@ -46,19 +46,6 @@ typedef struct instruction_s
 } instruction_t;
 
 
-/**
- * struct operation_s - validator its function
- * @opcode: the opcode
- * @validate_func: function to handle the opcode
- * Description: validator and its function
- */
-typedef struct operation_s
-{
-	char *opcode;
-	int (*validate_func)(char *arg, unsigned int);
-} operation_t;
-
-
 /*Functions*/
 void check_num_of_args(int argc, char *argv[]);
 FILE *op_file(char *fname);
@@ -71,24 +58,7 @@ char *arg, stack_t **stack, unsigned int line_num);
 
 
 /*Validators*/
-int validate_args(char *opcode, char *arg, unsigned int line_number);
 int validate_push(char *arg, unsigned int line_number);
-int validate_pall(char *arg, unsigned int line_number);
-int validate_pint(char *arg, unsigned int line_number);
-int validate_pop(char *arg, unsigned int line_number);
-int validate_swap(char *arg, unsigned int line_number);
-int validate_add(char *arg, unsigned int line_number);
-int validate_nop(char *arg, unsigned int line_number);
-int validate_pchar(char *arg, unsigned int line_number);
-int validate_pstr(char *arg, unsigned int line_number);
-int validate_rotl(char *arg, unsigned int line_number);
-int validate_rotr(char *arg, unsigned int line_number);
-int validate_sub(char *arg, unsigned int line_number);
-int validate_div(char *arg, unsigned int line_number);
-int validate_mod(char *arg, unsigned int line_number);
-int validate_mul(char *arg, unsigned int line_number);
-int validate_stack(char *arg, unsigned int line_number);
-int validate_queue(char *arg, unsigned int line_number);
 
 /*Stack functions*/
 void _push(stack_t **stack, unsigned int line_num);
